@@ -116,7 +116,7 @@ Work through each decision one at a time. For each decision:
 2. Before asking, show the expert what is already known about this element — the format depends on its status:
    - **SUFFICIENT**: show the source excerpt and ask the expert to confirm or expand it
    - **WEAK**: show the source excerpt and ask the expert to fill what's missing or correct what's wrong
-   - **ABSENT**: show the model's pre-trained understanding, clearly labeled as such, and ask the expert to confirm, correct, or enrich it. Use this exact label: `Model's pre-trained understanding (not from the document):` — this distinction matters so the expert knows they are validating AI knowledge, not source content
+   - **ABSENT**: show the model's pre-trained understanding, clearly labeled as such, and ask two things: (1) is this correct, incomplete, or wrong? (2) what additional context would you add that the model wouldn't know? Use this exact label: `Model's pre-trained understanding (not from the document):` — this distinction matters so the expert knows they are validating AI knowledge, not source content
 3. Ask one question and wait for the answer before asking the next
 
 **User commands to accept at any prompt:**
