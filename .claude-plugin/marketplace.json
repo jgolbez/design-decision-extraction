@@ -1,0 +1,25 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "design-decision-extraction",
+  "description": "Extract structured design decisions from technical documents for AI-consumable decision knowledge",
+  "owner": {
+    "name": "juangolbez",
+    "email": "jgolbez@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "design-decision-extraction",
+      "description": "Extract structured design decisions from a technical document. Reads the document, identifies architectural choice points, interviews the author to fill gaps, and writes complete decision frameworks as markdown and JSONL files ready for AI inference.",
+      "author": {
+        "name": "juangolbez"
+      },
+      "category": "productivity",
+      "source": {
+        "source": "git",
+        "url": "https://github.com/jgolbez/design-decision-extraction.git",
+        "ref": "main"
+      },
+      "homepage": "https://github.com/jgolbez/design-decision-extraction"
+    }
+  ]
+}
