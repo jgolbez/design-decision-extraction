@@ -165,6 +165,8 @@ Write a complete, self-contained decision framework. Every sentence must stand a
 - **[If you choose Alt 1]:** [Downstream decisions and consequences] [S/E/I]
 - **[If you choose Alt 2]:** [Downstream decisions and consequences] [S/E/I]
 
+Rule: every alternative must have its own implication entry. For every constraint or limitation named in Trade-offs, carry it forward into Implications as "when this limitation becomes relevant, here is what the organization does instead."
+
 **Evidence:** [Examples, validation results, real-world outcomes] [S/E/I]
 ```
 
