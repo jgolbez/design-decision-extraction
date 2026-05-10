@@ -94,6 +94,7 @@ Classify each element:
 - **ABSENT** — nothing usable in the document
 
 For every WEAK or ABSENT element, prepare 2–3 targeted elicitation questions.
+For every ABSENT element, also draft a pre-answer from your own training knowledge for each question. This will be shown to the expert during elicitation so they can confirm, correct, or expand rather than answer from scratch. Label these clearly as model pre-answers — the expert must know this is not from the document.
 For every SUFFICIENT element, prepare 1 expansion question asking the expert to confirm and elaborate in their own words.
 
 Show the user a brief gap summary before starting elicitation:
@@ -112,7 +113,10 @@ Decision 1: Should you use X or Y?
 Work through each decision one at a time. For each decision:
 
 1. Show a one-line header: `Decision 2/5 — "Should you use X or Y?" — Question 3/7`
-2. For WEAK elements, show the relevant excerpt from the document first, then ask the question so the user refines rather than starts from scratch
+2. Before asking, show the expert what is already known about this element — the format depends on its status:
+   - **SUFFICIENT**: show the source excerpt and ask the expert to confirm or expand it
+   - **WEAK**: show the source excerpt and ask the expert to fill what's missing or correct what's wrong
+   - **ABSENT**: show the model's pre-trained understanding, clearly labeled as such, and ask the expert to confirm, correct, or enrich it. Use this exact label: `Model's pre-trained understanding (not from the document):` — this distinction matters so the expert knows they are validating AI knowledge, not source content
 3. Ask one question and wait for the answer before asking the next
 
 **User commands to accept at any prompt:**
@@ -141,7 +145,7 @@ Write a complete, self-contained decision framework. Every sentence must stand a
 - Name trade-offs with their conditions and impact
 - Explain downstream consequences and which decisions they affect
 - Include examples, validation results, or real-world outcomes for evidence
-- Annotate every sentence with its origin: `[S]` source-derived, `[E]` elicited, `[I]` inferred from domain knowledge
+- Annotate every sentence with its origin: `[S]` source-derived, `[E]` elicited (includes expert-confirmed model pre-answers), `[I]` inferred and not validated by the expert
 - Minimum content: 1–2 sentences per alternative, 1–2 sentences per condition, 1–2 sentences per implication, 2+ sentences for evidence
 - No placeholder dashes, no `[MISSING: ...]` markers — every section must have substantive content
 
