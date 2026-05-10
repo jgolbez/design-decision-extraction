@@ -14,7 +14,11 @@
         "name": "juangolbez"
       },
       "category": "productivity",
-      "source": ".",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/jgolbez/design-decision-extraction.git",
+        "sha": "674571a5105f587f0584d3d7389e1a936376a433"
+      },
       "homepage": "https://github.com/jgolbez/design-decision-extraction"
     }
   ]
