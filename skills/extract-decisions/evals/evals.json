@@ -1,0 +1,26 @@
+{
+  "skill_name": "extract-decisions",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Extract design decisions from tests/fixtures/sample_design_guide.md",
+      "expected_output": "Identified design decision candidates, presented as a numbered table with alternatives and confidence levels",
+      "expectations": [
+        "Skill reads the document using the Read tool",
+        "Skill identifies at least one design decision candidate",
+        "Skill presents candidates in a numbered table with alternatives and confidence",
+        "Skill asks user to confirm or remove candidates before proceeding"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "I want to extract the design decisions from my architecture document at /tmp/arch.md",
+      "expected_output": "Skill begins the workflow by reading the document and finding decision candidates",
+      "expectations": [
+        "Skill reads the specified document",
+        "Skill identifies architectural choice points",
+        "Skill does not ask multiple questions at once during elicitation"
+      ]
+    }
+  ]
+}

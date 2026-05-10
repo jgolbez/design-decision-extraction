@@ -1,0 +1,8 @@
+{
+  "name": "design-decision-extraction",
+  "description": "Extract structured design decisions from technical documents. Identifies architectural choices, enriches them through expert elicitation, and produces AI-consumable decision frameworks.",
+  "author": {
+    "name": "juangolbez"
+  },
+  "version": "0.1.0"
+}
