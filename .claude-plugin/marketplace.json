@@ -17,7 +17,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/jgolbez/design-decision-extraction.git",
-        "sha": "951644a12fb71ca44f2ecede72987682805903f0"
+        "sha": "cc62f33b2b897eeac216b3d7f66a52a1262cc390"
       },
       "homepage": "https://github.com/jgolbez/design-decision-extraction"
     }
