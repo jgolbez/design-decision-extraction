@@ -151,9 +151,12 @@ Classify each element:
 - **WEAK** — partial content but vague, unquantified, or incomplete
 - **ABSENT** — nothing usable in the document
 
-For every WEAK or ABSENT element, prepare 2–3 targeted elicitation questions.
-For every ABSENT element, also draft a pre-answer from your own training knowledge for each question. This will be shown to the expert during elicitation so they can confirm, correct, or expand rather than answer from scratch. Label these clearly as model pre-answers — the expert must know this is not from the document.
-For every SUFFICIENT element, prepare 1 expansion question asking the expert to confirm and elaborate in their own words.
+For every element (SUFFICIENT, WEAK, or ABSENT), prepare elicitation questions:
+- SUFFICIENT: 1 expansion question
+- WEAK: 2–3 targeted questions to fill gaps
+- ABSENT: 2–3 targeted questions
+
+For every element, draft a model pre-answer from your own training knowledge. This will be shown to the expert during elicitation so they can confirm, correct, or expand rather than answer from scratch. Label these clearly as model pre-answers — the expert must know this is not from the document.
 
 Before showing the gap summary, write `session.json` with `phase: "elicitation"` and the fully-populated `assessments` object.
 
@@ -173,10 +176,9 @@ Decision 1: Should you use X or Y?
 Work through each decision one at a time. For each decision:
 
 1. Show a one-line header: `Decision 2/5 — "Should you use X or Y?" — Question 3/7`
-2. Before asking, show the expert what is already known about this element — the format depends on its status:
-   - **SUFFICIENT**: show the source excerpt and ask the expert to confirm or expand it
-   - **WEAK**: show the source excerpt and ask the expert to fill what's missing or correct what's wrong
-   - **ABSENT**: show the model's pre-trained understanding, clearly labeled as such, and ask two things: (1) is this correct, incomplete, or wrong? (2) what additional context would you add that the model wouldn't know? Use this exact label: `Model's pre-trained understanding (not from the document):` — this distinction matters so the expert knows they are validating AI knowledge, not source content
+2. Before asking, always show the model's pre-trained understanding of this element, clearly labeled as `Model's pre-trained understanding (not from the document):`. Then, for SUFFICIENT and WEAK elements, also show the relevant source excerpt as supporting context. Always ask two things: (1) is the model's understanding correct, incomplete, or wrong? (2) what would you add that the model wouldn't know?
+   - The source excerpt (for SUFFICIENT/WEAK) is context only — never ask the expert to confirm whether the document is accurate
+   - This distinction matters so the expert knows they are validating AI knowledge, not source content
 3. Ask one question and wait for the answer before asking the next
 
 **User commands to accept at any prompt:**
