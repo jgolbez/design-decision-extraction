@@ -23,9 +23,24 @@ Ask the user for the document path if they haven't provided one. Then begin Phas
 
 ---
 
+## Tools and Dependencies
+
+**This skill requires no external tools, Python packages, or shell commands.** Use only Claude Code's built-in tools:
+
+- **Read** — reads documents directly. Handles PDF, markdown, and plain text natively. Never install pdfplumber, pypdf, or any other library to read documents.
+- **Write** — writes output files.
+- **Bash** — only for checking whether a file or directory exists (`ls`, `test -f`). Not for document parsing.
+
+**PDF-specific rules:**
+- Use `Read` with the `pages` parameter for large PDFs: `pages: "1-10"`, `pages: "11-20"`, etc. Maximum 20 pages per call.
+- For PDFs over 20 pages, read in 20-page batches and combine the text yourself before analysis.
+- Never use Python or shell tools to extract PDF text.
+
+---
+
 ## Phase 1: Inventory
 
-Read the document using the Read tool. If the document is very large (over 800 lines), read it in sections.
+Read the document using the Read tool. If the document is very large (over 800 lines for text files, or over 20 pages for PDFs), read it in sections.
 
 Then identify design decision candidates by thinking like a **Network Architecture and Design Analyst**:
 
